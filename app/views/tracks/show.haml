@@ -1,1 +1,9 @@
-%h2= "#{@album.artist.name} > #{@album.name} > #{@track.name}"
+.container
+  %h2
+    = link_to "Home", root_path
+    >
+    = link_to "#{@album.artist.name}", artist_path(@album.artist)
+    >
+    = link_to "#{@album.name}", artist_album_path(@album.artist, @album)
+    >
+    = link_to "#{@track.name}", album_track_path(@album.artist, @track)
