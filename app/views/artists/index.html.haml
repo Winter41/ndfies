@@ -1,3 +1,7 @@
-%h2 All Artist
+%h2 Home
+
+= link_to "New artist", new_artist_path
+
+%h3 Artists
 - @artist.each do |artist|
-  %p= artist.name
+  %p= link_to artist.name, artist_path(artist)

@@ -1,0 +1,7 @@
+%h2= "Artist: #{@artist.name}"
+%p= link_to "New album", new_artist_album_path(@artist)
+
+%h3 Albums
+= render @artist.albums
+
+= link_to "Back", root_path
