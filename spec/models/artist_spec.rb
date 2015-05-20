@@ -13,6 +13,15 @@ RSpec.describe Artist, :type => :model do
       expect(artist.name).to eq nil
     end
 
+    it "validates length if name true" do
+      expect("#{artist.name}".length).to be < 15
+    end
+
+    it "validates length of name false" do
+      artist.update(name: "John Nico Garcia")
+      expect("#{artist.name}".length).to be > 15
+    end
+
 
   end
 
