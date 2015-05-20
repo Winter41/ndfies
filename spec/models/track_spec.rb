@@ -1,19 +1,29 @@
 require "rails_helper"
 
 RSpec.describe Track, :type => :model do
-  artist = Track.new(name: "Clear")
+  let!(:track) {create :track}
 
-  describe "Track" do
+  describe "track" do
     it "validates presence of name true"do
-      artist.save
-      expect(artist.name).to eq "Clear"
+      expect(track.name).to eq "Flow"
     end
 
     it "validates presence of name false" do
-      artist.update(name: nil)
-      artist.save
-      expect(artist.name).to eq nil
+      track.update(name: nil)
+      expect(track.name).to eq nil
     end
+
+    it "validates length if name true" do
+      expect("#{track.name}".length).to be < 15
+    end
+
+    it "validates length of name false" do
+      track.update(name: "John Nics Garcia")
+      expect("#{track.name}".length).to be > 15
+    end
+
+
   end
+
 
 end
