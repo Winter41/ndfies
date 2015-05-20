@@ -1,1 +1,6 @@
-%h3= @album.name
+%h2= "#{@album.artist.name} > #{@album.name}"
+= link_to "New track", new_album_track_path(@album)
+
+%h3 Tracks
+= render @album.tracks
+
