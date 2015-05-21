@@ -17,8 +17,10 @@ class ArtistsController < ApplicationController
     @artist = Artist.create(artist_params)
 
     if @artist.save
+      flash[:success] = "Successfully created artist!"
       redirect_to @artist
     else
+      flash[:error] = @artist.errors.full_messages.to_sentence
       render :new
     end
   end

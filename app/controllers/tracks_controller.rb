@@ -12,8 +12,10 @@ class TracksController < ApplicationController
   def create
     @track = @album.tracks.create(track_params)
     if @track.save
-      redirect_to album_track_path(@album.artist, @track)
+      flash[:success] = "Successfully created track!"
+      redirect_to album_track_path(@album, @track)
     else
+      flash[:error] = @track.errors.full_messages.to_sentence
       render :new
     end
   end
