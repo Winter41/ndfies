@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  get 'tracks/new'
-
-  get 'tracks/create'
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users
 
   resources :artists do
     resources :albums
