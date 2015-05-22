@@ -27,6 +27,7 @@ class ArtistsController < ApplicationController
       render :edit
     end
   end
+
   def create
     @artist = Artist.create(artist_params)
 
