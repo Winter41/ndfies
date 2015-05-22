@@ -27,6 +27,7 @@ class ArtistsController < ApplicationController
       render :edit
     end
   end
+
   def create
     @artist = Artist.create(artist_params)
 
@@ -42,6 +43,7 @@ class ArtistsController < ApplicationController
   def destroy
     @artist = Artist.find params[:id]
     @artist.destroy
+    flash[:success] = "Successfully deleted an artist!"
     redirect_to artists_path
   end
 

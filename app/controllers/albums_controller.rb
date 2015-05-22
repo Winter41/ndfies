@@ -42,6 +42,7 @@ class AlbumsController < ApplicationController
   def destroy
     @album = @artist.albums.find params[:id]
     @album.destroy
+    flash[:success] = "Successfully deleted an album!"
     redirect_to @artist
   end
 

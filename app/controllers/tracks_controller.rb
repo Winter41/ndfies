@@ -39,6 +39,7 @@ class TracksController < ApplicationController
   def destroy
     @track = @album.tracks.find params[:id]
     @track.destroy
+    flash[:success] = "Successfully deleted a track!"
     redirect_to root_path
   end
 
