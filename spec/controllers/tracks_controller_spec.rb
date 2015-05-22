@@ -57,7 +57,7 @@ RSpec.describe TracksController, type: :controller do
     context "with invalid params" do
       before  { put :update, id: track.id, track: { name: nil }, album_id: album.id }
 
-      it "responds with a failure messages" do
+      it "responds with a error message" do
         expect(flash[:error].present?).to eq true
       end
     end

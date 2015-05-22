@@ -38,6 +38,7 @@ RSpec.describe ArtistsController, type: :controller do
         expect(flash[:error].present?).to eq true
       end
     end
+
   end
 
   describe "#update" do
@@ -54,7 +55,7 @@ RSpec.describe ArtistsController, type: :controller do
     context "with invalid params" do
       before { put :update, id: artist.id, artist: { name: nil } }
 
-      it "responds with a error message" do
+      it "responds with an error message" do
         expect(flash[:error].present?).to eq true
       end
     end
@@ -65,7 +66,7 @@ RSpec.describe ArtistsController, type: :controller do
     let!(:artist) { create :artist }
     before { delete :destroy, id: artist.id }
 
-    it "respond after deletion" do
+    it "responds after deletion" do
       expect(flash[:success].present?).to eq true
     end
   end

@@ -5,12 +5,12 @@ RSpec.describe AlbumsController, type: :controller do
   let!(:artist) { create :artist}
   let!(:album)  { build :album, artist: artist}
 
+
   before { sign_in user }
 
   describe "#create" do
-    let(:subject) { post :create, album: { name: album.name }, artist_id: artist.id }
-
     context "with valid params" do
+      let(:subject) { post :create, album: { name: album.name }, artist_id: artist.id }
       it "creates a new album" do
         expect { subject }.to change(Album, :count).by(1)
       end
@@ -42,7 +42,7 @@ RSpec.describe AlbumsController, type: :controller do
   end
 
   describe "#update" do
-    let!(:album)  { create :album, artist: artist}
+    let!(:album)  { create :album, artist: artisti }
 
     context "with valid params" do
       before { put :update, id: album.id, album: { name: "Nics" }, artist_id: artist.id }
@@ -55,7 +55,7 @@ RSpec.describe AlbumsController, type: :controller do
     context "with invalid params" do
       before { put :update, id: album.id, album: { name: nil }, artist_id: artist.id }
 
-      it "responds with a failure message" do
+      it "responds with an error message" do
         expect(flash[:error].present?).to eq true
       end
     end
@@ -66,10 +66,11 @@ RSpec.describe AlbumsController, type: :controller do
     let!(:album)  { create :album, artist: artist}
     before { delete :destroy, id: album.id, artist_id: artist.id }
 
-    it "respond after deletion" do
+    it "responds after deletion" do
       expect(flash[:success].present?).to eq true
     end
   end
 
 end
+
 
