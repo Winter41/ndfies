@@ -1,5 +1,4 @@
 class Album < ActiveRecord::Base
-  # this is cool
   belongs_to :artist
   has_many :tracks
 
