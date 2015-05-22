@@ -5,7 +5,7 @@ RSpec.describe Track, :type => :model do
 
   describe "track" do
     it "validates presence of name true"do
-      expect(track.name).to eq "Flow"
+      expect(track.name).to eq "Flowing"
     end
 
     it "validates presence of name false" do
