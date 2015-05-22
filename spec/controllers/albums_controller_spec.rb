@@ -42,7 +42,7 @@ RSpec.describe AlbumsController, type: :controller do
   end
 
   describe "#update" do
-    let!(:album)  { create :album, artist: artisti }
+    let!(:album)  { create :album, artist: artist }
 
     context "with valid params" do
       before { put :update, id: album.id, album: { name: "Nics" }, artist_id: artist.id }
