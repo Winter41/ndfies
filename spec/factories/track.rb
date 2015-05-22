@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :track do
-    name "Flow"
+    name "Flowing"
   end
 end

@@ -17,7 +17,7 @@ class AlbumsController < ApplicationController
 
     if @album.save
       flash[:success] = "Successfully created an album!"
-      redirect_to @artist
+      redirect_to artist_album_path(@album.artist, @album)
     else
       flash[:error] = @album.errors.full_messages.to_sentence
       render :new
