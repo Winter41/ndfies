@@ -1,0 +1,8 @@
+.container
+  %h2= "Edit album for #{@artist.name}"
+
+  = form_for([@artist, @album]) do |f|
+    .form-group
+      = f.label :name, "Album"
+      = f.text_field :name
+    = f.submit

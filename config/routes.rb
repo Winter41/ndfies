@@ -12,12 +12,13 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root 'artist#index', as: :authenticated_root
+      root 'artists#index', as: :authenticated_root
     end
     unauthenticated do
       root 'devise/sessions#new', as: :unauthenticated_root
     end
   end
 
-  root 'artist#index'
+  root 'artists#index'
+
 end

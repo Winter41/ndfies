@@ -1,1 +1,5 @@
-%p= link_to "#{track.name}", album_track_path(@album.artist, track)
+%p
+  = link_to "#{track.name}", album_track_path(@album, track)
+  |
+  = link_to "Edit", edit_album_track_path(@album, track)
+  = link_to "Delete", album_track_path(@album, track), method: :delete, data: {confirm: "Are you sure?"}

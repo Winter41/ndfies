@@ -1,0 +1,9 @@
+.container
+  %h2= "New track for #{@album.name}"
+
+  = form_for([@album, @track]) do |f|
+    .form-group
+      = f.label :name
+      = f.text_field :name
+    = f.submit
+

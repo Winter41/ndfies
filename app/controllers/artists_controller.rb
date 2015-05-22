@@ -13,6 +13,20 @@ class ArtistsController < ApplicationController
     @artist = Artist.new
   end
 
+  def edit
+    @artist = Artist.find params[:id]
+  end
+
+  def update
+    @artist = Artist.find params[:id]
+    if @artist.update(artist_params)
+      flash[:success] = "Successfully updated an artist!"
+      redirect_to artists_path
+    else
+      flash[:error] = @artist.errors.full_messages.to_sentence
+      render :edit
+    end
+  end
   def create
     @artist = Artist.create(artist_params)
 
@@ -23,6 +37,12 @@ class ArtistsController < ApplicationController
       flash[:error] = @artist.errors.full_messages.to_sentence
       render :new
     end
+  end
+
+  def destroy
+    @artist = Artist.find params[:id]
+    @artist.destroy
+    redirect_to artists_path
   end
 
   private
