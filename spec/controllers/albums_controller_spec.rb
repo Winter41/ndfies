@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe AlbumsController, type: :controller do
   let!(:user)   { create :user }
   let!(:artist) { create :artist}
-  let!(:album)  { build :album }
+  let!(:album)  { build :album, artist: artist}
 
   before { sign_in user }
 
@@ -22,7 +22,7 @@ RSpec.describe AlbumsController, type: :controller do
 
       it "responds with a success message" do
         subject
-        expect(flash[:success]).to be_present
+        expect(flash[:success].present?).to eq true
       end
     end
 
@@ -35,34 +35,41 @@ RSpec.describe AlbumsController, type: :controller do
 
       it "responds with an error message" do
         subject
-        expect(flash[:error]).to be_present
+        expect(flash[:error].present?).to eq true
       end
     end
+
   end
 
-  #describe "#update" do
-    #let!(:artist) { create :artist }
-    #let!(:album)  { create :album }
-    #let(:subject) { put :update, album: { name: "Nics" }, artist_id: artist.id }
+  describe "#update" do
+    let!(:album)  { create :album, artist: artist}
 
-    #it "updates the artist" do
-      #expect { subject } == "Nics"
-    #end
+    context "with valid params" do
+      before { put :update, id: album.id, album: { name: "Nics" }, artist_id: artist.id }
 
-    #it "responds with a success message" do
-      #subject
-      #expect(flash[:success]).to be_present
-    #end
+      it "responds with a success message" do
+        expect(flash[:success].present?).to eq true
+      end
+    end
 
-  #end
+    context "with invalid params" do
+      before { put :update, id: album.id, album: { name: nil }, artist_id: artist.id }
 
-  #describe "#destroy" do
-    #let!(:artist) { create :artist }
-    #let!(:album)  { create :album }
-    #it "deletes an artist" do
-      #expect { delete :destroy, artist_id: artist.id, album_id: album.id }.to change(Artist, :count).by(-1)
-    #end
-  #end
+      it "responds with a failure message" do
+        expect(flash[:error].present?).to eq true
+      end
+    end
+
+  end
+
+  describe "#destroy" do
+    let!(:album)  { create :album, artist: artist}
+    before { delete :destroy, id: album.id, artist_id: artist.id }
+
+    it "respond after deletion" do
+      expect(flash[:success].present?).to eq true
+    end
+  end
 
 end
 
