@@ -1,6 +1,6 @@
 = form_for([@album, @album.tracks.build]) do |f|
   .form-group
-    = f.label :name
+    = f.label :name, "Track"
     = f.text_field :name
   .form-group
     = f.label :mp3
