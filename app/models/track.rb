@@ -5,5 +5,6 @@ class Track < ActiveRecord::Base
   validates :name, presence: true,
                    length: { maximum: 12 },
                    uniqueness: true
+  validates :mp3, presence: true
 
 end
