@@ -7,3 +7,4 @@
     = link_to "#{@album.name}", artist_album_path(@album.artist, @album)
     >
     = link_to "#{@track.name}", album_track_path(@album, @track)
+  = @track.mp3
