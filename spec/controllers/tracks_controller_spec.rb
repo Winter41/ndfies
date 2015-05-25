@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe TracksController, type: :controller do
   let!(:user)   { create :user }
   let!(:artist) { create :artist }
-  let!(:album)  { create :album }
+  let!(:album)  { create :album, artist: artist}
   let!(:track)  { build :track }
 
   before { sign_in user }
