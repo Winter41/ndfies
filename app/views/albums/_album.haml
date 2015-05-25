@@ -1,5 +1,7 @@
-%p
-  = link_to "#{album.name}", artist_album_path(@artist, album)
-  |
-  = link_to "Edit", edit_artist_album_path(@artist, album)
-  = link_to "Delete", artist_album_path(@artist, album), method: :delete, data: {confirm: "Are you sure?"}
+.row
+  .col-md-1
+    = link_to "#{album.name}", artist_album_path(@artist, album)
+  .col-md-2
+    = link_to "Edit", edit_artist_album_path(@artist, album)
+    |
+    = link_to "Delete", artist_album_path(@artist, album), method: :delete, data: {confirm: "Are you sure?"}
