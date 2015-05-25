@@ -2,5 +2,10 @@
   .form-group
     = f.label :name
     = f.text_field :name
+  .form-group
+    = f.label :mp3
+    = f.file_field :mp3
+    = f.hidden_field :mp3_cache
+
   = f.submit
 
