@@ -26,11 +26,23 @@ RSpec.feature 'Create Artists', type: :feature do
     expect(page).to have_text track.name
   end
 
-  scenario 'with invalid credentials' do
+  scenario 'with nil Track' do
     visit new_album_track_path album
 
     fill_in "Track", with: nil
     attach_file "Mp3", nil
+
+    click_button "Create Track"
+
+    expect(page).to have_text "New track for"
+  end
+
+  scenario 'with invalid file format' do
+    visit new_album_track_path album
+
+    fill_in "Track", with: nil
+    attach_file "Mp3", "#{Rails.root}/spec/support/sample.png"
+
 
     click_button "Create Track"
 
