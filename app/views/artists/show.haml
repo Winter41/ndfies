@@ -1,5 +1,5 @@
 .container
-  %h2
+  %h3
     = link_to "Home", root_path
     >
     = link_to "#{@artist.name}", artist_path(@artist)
@@ -7,6 +7,6 @@
 
   %p= link_to "New album", new_artist_album_path(@artist)
 
-  %h3 Albums
+  %h4 Albums
   = render @artist.albums
 
