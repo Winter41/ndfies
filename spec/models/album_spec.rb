@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Album, :type => :model do
+RSpec.describe Album, type: :model do
   let!(:album) {create :album}
 
   describe "Album" do

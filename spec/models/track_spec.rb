@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Track, :type => :model do
+RSpec.describe Track, type: :model do
   let!(:track) {create :track}
 
   describe "track" do

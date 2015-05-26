@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Artist, :type => :model do
+RSpec.describe Artist, type: :model do
   let!(:artist) {create :artist}
 
   describe "Artist" do

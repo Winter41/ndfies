@@ -19,6 +19,8 @@ RSpec.feature 'Create Artists', type: :feature do
     visit new_album_track_path album
 
     fill_in "Track", with: track.name
+    attach_file "Mp3", "#{Rails.root}/spec/support/im_yours.mp3"
+
     click_button "Create Track"
 
     expect(page).to have_text track.name
@@ -28,6 +30,8 @@ RSpec.feature 'Create Artists', type: :feature do
     visit new_album_track_path album
 
     fill_in "Track", with: nil
+    attach_file "Mp3", nil
+
     click_button "Create Track"
 
     expect(page).to have_text "New track for"
