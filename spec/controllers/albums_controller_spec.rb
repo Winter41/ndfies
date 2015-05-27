@@ -47,6 +47,10 @@ RSpec.describe AlbumsController, type: :controller do
     context "with valid params" do
       before { put :update, id: album.id, album: { name: "Nics" }, artist_id: artist.id }
 
+      it "responds with a correct name" do
+        expect(album.reload.name).to eq "Nics"
+      end
+
       it "responds with a success message" do
         expect(flash[:success].present?).to eq true
       end
@@ -64,9 +68,14 @@ RSpec.describe AlbumsController, type: :controller do
 
   describe "#destroy" do
     let!(:album)  { create :album, artist: artist}
-    before { delete :destroy, id: album.id, artist_id: artist.id }
+    let(:subject) { delete :destroy, id: album.id, artist_id: artist.id }
+
+    it "delete an album" do
+      expect{ subject }.to change(Album, :count).by(-1)
+    end
 
     it "responds after deletion" do
+      subject
       expect(flash[:success].present?).to eq true
     end
   end

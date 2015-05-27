@@ -20,7 +20,7 @@ class TracksController < ApplicationController
       redirect_to album_track_path(@album, @track)
     else
       flash[:error] = @track.errors.full_messages.to_sentence
-      render :new
+      render :edit
     end
   end
 

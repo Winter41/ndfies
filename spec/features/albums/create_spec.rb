@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Create Artists', type: :feature do
+RSpec.feature 'Create Album', type: :feature do
   let!(:user)     { create :user }
   let!(:artist)   { create :artist}
   let!(:album)    { build :album, artist: artist }

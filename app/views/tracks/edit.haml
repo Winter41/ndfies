@@ -1,9 +1,12 @@
 .container
-  %h2= "New track for #{@album.name}"
+  %h2= "Edit track for #{@album.name}"
 
   = form_for([@album, @track]) do |f|
     .form-group
-      = f.label :name
+      = f.label :name, "Track"
       = f.text_field :name
+    .form-group
+      = f.label :file, "Mp3"
+      = f.file_field :file
+      = f.hidden_field :file_cache
     = f.submit
-
