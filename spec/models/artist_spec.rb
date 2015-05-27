@@ -22,7 +22,6 @@ RSpec.describe Artist, type: :model do
       expect("#{artist.name}".length).to be > 15
     end
 
-
   end
 
 end

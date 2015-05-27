@@ -22,7 +22,6 @@ RSpec.describe Album, type: :model do
       expect("#{album.name}".length).to be > 15
     end
 
-
   end
 
 end

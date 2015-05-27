@@ -22,8 +22,6 @@ RSpec.describe Track, type: :model do
       expect("#{track.name}".length).to be > 15
     end
 
-
   end
-
 
 end

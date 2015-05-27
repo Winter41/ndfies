@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Create Artists', type: :feature do
+RSpec.feature 'Create Artist', type: :feature do
   let!(:user)     { create :user }
   let!(:artist)   { build :artist }
 
@@ -16,7 +16,7 @@ RSpec.feature 'Create Artists', type: :feature do
   scenario 'with valid credentials' do
     visit new_artist_path
 
-    fill_in "Name", with: artist.name
+    fill_in "Artist", with: artist.name
     click_button "Create Artist"
 
     expect(page).to have_text artist.name
@@ -25,10 +25,10 @@ RSpec.feature 'Create Artists', type: :feature do
   scenario 'with invalid credentials' do
     visit new_artist_path
 
-    fill_in "Name", with: nil
+    fill_in "Artist", with: nil
     click_button "Create Artist"
 
-    expect(page).to have_text "New Artist Name"
+    expect(page).to have_text "New Artist"
   end
 
 end

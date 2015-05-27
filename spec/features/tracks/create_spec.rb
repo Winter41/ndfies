@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Create Artists', type: :feature do
+RSpec.feature 'Create Album', type: :feature do
   let!(:user)     { create :user }
   let!(:artist)   { create :artist}
   let!(:album)    { create :album, artist: artist }
@@ -19,7 +19,7 @@ RSpec.feature 'Create Artists', type: :feature do
     visit new_album_track_path album
 
     fill_in "Track", with: track.name
-    attach_file "Mp3", "#{Rails.root}/spec/support/im_yours.mp3"
+    attach_file "Mp3", "#{Rails.root}/spec/support/sample.mp3"
 
     click_button "Create Track"
 
