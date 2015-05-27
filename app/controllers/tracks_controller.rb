@@ -50,6 +50,6 @@ class TracksController < ApplicationController
   end
 
   def track_params
-    params.require(:track).permit(:name, :mp3)
+    params.require(:track).permit(:name, :file)
   end
 end
