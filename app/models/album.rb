@@ -3,6 +3,5 @@ class Album < ActiveRecord::Base
   has_many :tracks, dependent: :destroy
 
   validates :name, presence: true,
-                   length: { maximum: 12 },
-                   uniqueness: true
+                   length: { maximum: 12 }
 end
