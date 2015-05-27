@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import "utils/*";
 @import "toastr.min";
-@import "overrides/*";
+@import "components/*";
