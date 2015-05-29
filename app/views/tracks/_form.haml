@@ -1,4 +1,4 @@
-= form_for([@album, @album.tracks.build]) do |f|
+= form_for([@album, @album.tracks.new]) do |f|
   .form-group
     = f.label :name, "Track"
     = f.text_field :name
@@ -7,5 +7,10 @@
     = f.file_field :file
     = f.hidden_field :file_cache
 
+    #progress
+      .bar{ style: "width: 0%;"}
+
   = f.submit class: 'btn btn-primary'
 
+:javascript
+  $(function(){ Ndfies.Jquery_upload.init();})

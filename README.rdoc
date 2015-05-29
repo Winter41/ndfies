@@ -1,3 +1,3 @@
 NDFIES
-  A mere NDFY clone to be used for practice by John Nico Garcia
+  A mere NDFY clone to be used for practice
   Muhaha. :)
