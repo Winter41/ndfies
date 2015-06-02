@@ -9,9 +9,9 @@ RSpec.feature 'User Registration' do
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    fill_in 'Password confirmation', with: user.password
+    fill_in 'Confirm Password', with: user.password
 
-    click_button 'Register'
+    click_button 'Create Account'
 
     expect(page).to have_content user.email
   end
@@ -22,11 +22,11 @@ RSpec.feature 'User Registration' do
 
     fill_in 'Email', with: "wat"
     fill_in 'Password', with: user.password
-    fill_in 'Password confirmation', with: user.password
+    fill_in 'Confirm Password', with: user.password
 
-    click_button 'Register'
+    click_button 'Create Account'
 
-    expect(page).to have_content "Register"
+    expect(page).to have_content "Email is invalid"
   end
 
   scenario 'with unmatching password' do
@@ -35,11 +35,11 @@ RSpec.feature 'User Registration' do
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    fill_in 'Password confirmation', with: "wat"
+    fill_in 'Confirm Password', with: "wat"
 
-    click_button 'Register'
+    click_button 'Create Account'
 
-    expect(page).to have_content "Register"
+    expect(page).to have_content "doesn't match"
   end
 
 end
