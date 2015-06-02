@@ -9,8 +9,16 @@
 
     #progress
       .bar{ style: "width: 0%;"}
+    #status
 
-  = f.submit class: 'btn btn-primary'
+    -#%audio{controls: ""}
+      -#%source{src: "#{@track.file.url}", type: "audio/mpeg"}
+      -#Your browser doesn't support the audio element
+    #submit
+      %button.btn.btn-primary
+        Save
+    = f.submit class: 'btn btn-primary', id: "submit"
+
 
 :javascript
   $(function(){ Ndfies.Jquery_upload.init();})

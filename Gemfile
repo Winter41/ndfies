@@ -29,7 +29,6 @@ gem 'bootstrap-sass'
 gem 'devise'
 
 gem 'carrierwave'
-gem 'mp3_player'
 
 gem "jquery-fileupload-rails"
 

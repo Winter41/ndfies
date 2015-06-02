@@ -7,12 +7,21 @@ $ ->
       dataType: 'json'
 
       add: (e, data) ->
-        data.context = $('<p/>').text('Uploading...').appendTo(document.body)
+        $('#status').text("Uploading...")
         data.submit()
+        $('#status').text("Upload finished.")
 
       done: (e, data) ->
-        data.context.text 'Upload finished.'
 
       progressall: (e, data) ->
-        progress = parseInt(data.loaded / data.total * 100, 10)
+        progress = parseInt(data.loaded / data.total * 20, 10)
         $('#progress .bar').css 'width', progress + '%'
+
+    $("#track_file").on 'change', ->
+      audio = new Audio()
+      audio.addEventListener "canplaythrough", (->
+        audio.play()
+      ), false
+
+    $("#submit").click ->
+      data.submit()
