@@ -9,7 +9,7 @@ RSpec.feature 'User Session' do
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password
 
-    click_button "Log in"
+    click_button "Sign in"
 
     expect(page).to have_content user.email
   end
@@ -20,9 +20,9 @@ RSpec.feature 'User Session' do
     fill_in "Email", with: "wat"
     fill_in "Password", with: user.password
 
-    click_button "Log in"
+    click_button "Sign in"
 
-    expect(page).to have_content "Log in"
+    expect(page).to have_content "Login"
   end
 
   scenario 'with invalid password' do
@@ -31,11 +31,9 @@ RSpec.feature 'User Session' do
     fill_in "Email", with: user.email
     fill_in "Password", with: "wat"
 
-    click_button "Log in"
+    click_button "Sign in"
 
-    expect(page).to have_content "Log in"
+    expect(page).to have_content "Login"
   end
-
-
 
 end
