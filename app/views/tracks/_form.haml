@@ -4,21 +4,17 @@
     = f.text_field :name, placeholder: 'Name', class: 'form-control'
   .form-group
     = f.label :file, "Mp3"
-    = f.file_field :file, class: 'form-control'
+    = f.file_field :file, class: 'form-control', id: 'audio-upload'
     = f.hidden_field :file_cache
 
+    #audio-preview
     #progress
       .bar{ style: "width: 0%;"}
     #status
 
-    %audio{ controls: "" }
-      %source{ id: 'preview', src: '', type: "audio/mpeg"}
-      Your browser doesn't support the audio element
-
     -#= f.submit class: 'btn btn-primary', id: "submit"
-#save
-  %button.btn.btn-primary
-    Save
+%button.btn.btn-primary{id: 'submit'}
+  Save
 
 
 :javascript
