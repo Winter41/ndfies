@@ -12,6 +12,8 @@
         .form-group
           = f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Confirm Password', class: 'form-control'
         .actions
-          = f.submit "Create Account", class: 'btn btn-primary'
+          = f.submit "Create Account", class: 'btn btn-primary btn-block'
       .page-mics-actions
-        = render "devise/shared/links"
+        %p.text-center
+          Have an account?
+          = link_to "Log in", user_session_path

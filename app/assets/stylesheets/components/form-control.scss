@@ -1,0 +1,9 @@
+.form-control {
+  box-shadow: none !important;
+  @include transition(all 0.3s);
+  border-radius: 2px;
+
+  &:focus {
+    border-color: crimson;
+  }
+}

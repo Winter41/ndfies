@@ -1,11 +1,21 @@
-= form_for([@album, @album.tracks.build]) do |f|
+= form_for([@album, @album.tracks.new]) do |f|
   .form-group
     = f.label :name, "Track"
-    = f.text_field :name
+    = f.text_field :name, placeholder: 'Name', class: 'form-control'
   .form-group
     = f.label :file, "Mp3"
-    = f.file_field :file
+    = f.file_field :file, class: 'form-control', id: 'audio-upload'
     = f.hidden_field :file_cache
 
-  = f.submit class: 'btn btn-primary'
+    #audio-preview
+    #progress
+      .bar{ style: "width: 0%;"}
+    #status
 
+    -#= f.submit class: 'btn btn-primary', id: "submit"
+%button.btn.btn-primary{id: 'submit'}
+  Save
+
+
+:javascript
+  $(function(){ Ndfies.Jquery_upload.init();})

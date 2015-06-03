@@ -1,5 +1,5 @@
 = form_for([@artist, @artist.albums.build]) do |f|
   .form-group
     = f.label :name, "Album"
-    = f.text_field :name
+    = f.text_field :name, placeholder: 'Name', class: 'form-control'
   = f.submit class: 'btn btn-primary'
