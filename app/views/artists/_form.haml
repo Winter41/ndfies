@@ -1,5 +1,5 @@
 = form_for @artist do |f|
   .form-group
     = f.label :name, "Artist"
-    = f.text_field :name
+    = f.text_field :name, placeholder: 'Name', class: 'form-control'
   = f.submit class: 'btn btn-primary'

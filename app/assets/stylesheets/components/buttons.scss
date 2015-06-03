@@ -1,0 +1,15 @@
+.btn {
+}
+
+.btn-primary {
+  background-color: crimson;
+  border: 1px solid crimson;
+  border-radius: 2px;
+  @include transition(all 0.3s);
+
+  &:hover, &:active, &:focus {
+    background-color: transparent;
+    border: 1px solid crimson;
+    color: crimson;
+  }
+}

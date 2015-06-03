@@ -1,23 +1,24 @@
 = form_for([@album, @album.tracks.new]) do |f|
   .form-group
     = f.label :name, "Track"
-    = f.text_field :name
+    = f.text_field :name, placeholder: 'Name', class: 'form-control'
   .form-group
     = f.label :file, "Mp3"
-    = f.file_field :file
+    = f.file_field :file, class: 'form-control'
     = f.hidden_field :file_cache
 
     #progress
       .bar{ style: "width: 0%;"}
     #status
 
-    -#%audio{controls: ""}
-      -#%source{src: "#{@track.file.url}", type: "audio/mpeg"}
-      -#Your browser doesn't support the audio element
-    #submit
-      %button.btn.btn-primary
-        Save
-    = f.submit class: 'btn btn-primary', id: "submit"
+    %audio{ controls: "" }
+      %source{ id: 'preview', src: '', type: "audio/mpeg"}
+      Your browser doesn't support the audio element
+
+    -#= f.submit class: 'btn btn-primary', id: "submit"
+#save
+  %button.btn.btn-primary
+    Save
 
 
 :javascript
