@@ -13,7 +13,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require toastr.min
-//= require jquery.uploadPreview.min
+//= require jquery.uploadPreview
 //= require jquery_ujs
 //= require jquery-fileupload/basic
 //= require jquery.jplayer
