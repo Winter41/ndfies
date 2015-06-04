@@ -105,6 +105,7 @@ GEM
     jbuilder (2.2.16)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jplayer-rails (2.5.0)
     jquery-fileupload-rails (0.4.5)
       actionpack (>= 3.1)
       railties (>= 3.1)
@@ -250,8 +251,10 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   factory_girl_rails
+  font-awesome-rails
   haml-rails
   jbuilder (~> 2.0)
+  jplayer-rails
   jquery-fileupload-rails
   jquery-rails
   rails (= 4.2.0)

@@ -7,6 +7,6 @@
     = link_to "#{@album.name}", artist_album_path(@album.artist, @album)
     >
     = link_to "#{@track.name}", album_track_path(@album, @track)
-  %audio{controls: ""}
-    %source{src: "#{@track.file.url}", type: "audio/mpeg"}
-    Your browser doesn't support the audio element
+  -#%audio{ controls: "", src: "#{@track.file.url}"}
+
+= render 'player'
