@@ -14,14 +14,14 @@
 
 .jp-gui {
   position: relative;
-  background: #f34927;
-  background: -moz-linear-gradient(top, #f34927 0%, #dd3311 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f34927), color-stop(100%,#dd3311));
-  background: -webkit-linear-gradient(top,  #f34927 0%,#dd3311 100%);
-  background: -o-linear-gradient(top,  #f34927 0%,#dd3311 100%);
-  background: -ms-linear-gradient(top,  #f34927 0%,#dd3311 100%);
-  background: linear-gradient(to bottom,  #f34927 0%,#dd3311 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f34927', endColorstr='#dd3311',GradientType=0 );
+  background: $red;
+  background: -moz-linear-gradient(top, $red 0%, $shade-red 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$red), color-stop(100%,$shade-red));
+  background: -webkit-linear-gradient(top,  $red 0%,$shade-red 100%);
+  background: -o-linear-gradient(top,  $red 0%,$shade-red 100%);
+  background: -ms-linear-gradient(top,  $red 0%,$shade-red 100%);
+  background: linear-gradient(to bottom,  $red 0%,$shade-red 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$red', endColorstr='$shade-red',GradientType=0 );
   -webkit-box-shadow:  0px 1px 1px 0px rgba(0 ,0 ,0 ,.1);
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, .1);
   border-radius: 2px;
@@ -51,11 +51,11 @@
   display: inline-block;
   text-align: center;
   line-height: 43px;
-  border-right: 1px solid #d22f0f;
+  border-right: 1px solid #c51a47;
 }
  
 .jp-controls .jp-play:hover, .jp-controls .jp-pause:hover {
-  background-color: #de3918;
+  background-color: #c51a47;
 }
  
 .jp-mute,.jp-unmute {
@@ -81,7 +81,7 @@
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
 }
 .jp-progress {
-    background-color: #992E18;
+    background-color: #c51a47;
     border-radius: 20px 20px 20px 20px;
     overflow: hidden;
     position: absolute;
@@ -107,7 +107,7 @@
   border-radius: 20px 20px 20px 20px;
   -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;
-  background-color: #992E18;
+  background-color: #c51a47;
   overflow: hidden;
 }
 

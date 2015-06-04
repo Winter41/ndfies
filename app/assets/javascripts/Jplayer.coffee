@@ -2,7 +2,7 @@ window.Ndfies       = window.Ndfies || {}
 window.Ndfies.Jplayer       = window.Ndfies.Jplayer || {}
 
 $ ->
-  Ndfies.Jplayer.init = (url) ->
+  Ndfies.Jplayer.player = (url) ->
     $(document).ready ->
       $('#jquery_jplayer_1').jPlayer
         ready: ->
