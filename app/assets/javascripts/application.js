@@ -16,5 +16,6 @@
 //= require jquery.uploadPreview.min
 //= require jquery_ujs
 //= require jquery-fileupload/basic
+//= require jquery.jplayer
 //= require turbolinks
 //= require_tree .
