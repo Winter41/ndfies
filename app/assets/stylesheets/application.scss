@@ -1,9 +1,10 @@
+@import "./variables";
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
-@import "utils/*";
 
 @import "jquery.fileupload";
 @import "jquery.fileupload-ui";
 @import "toastr.min";
 @import "components/*";
+@import "utils/*";
