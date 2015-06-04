@@ -3,3 +3,29 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+//font-family
+body, td, textarea, input, p, h1, h2, h3, h4, h5, h6, a {
+  /*background: black;*/
+
+}
+//font-color
+p, h1, h2, h3, h4, h5, h6, label {
+  /*color: whitesmoke;*/
+}
+
+a {
+  color: $red;
+  background-color: transparent;
+  @include transition(all 0.3s);
+
+  &:hover, &:active, &:focus {
+    background-color: transparent;
+    color: darken($red, 10%);
+    text-decoration: none;
+  }
+}
+
+p {
+  line-height: 1.6em;
+}

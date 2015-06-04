@@ -2,7 +2,22 @@
   border: 0;
   border-radius: 0;
 }
-
 .navbar-default {
   /*background-color: black;*/
+  background-color: transparent;
+
+  .navbar-brand, .navbar-nav > li > a {
+    color: black;
+    /*color: whitesmoke;*/
+
+    @include transition(all 0.3s);
+
+    &:hover, &:active, &:focus {
+      color: $red;
+    }
+  }
 }
+/*.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {*/
+  /*color: crimson;*/
+  /*background-color: white;*/
+/*}*/
