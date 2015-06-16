@@ -14,40 +14,39 @@ RSpec.feature 'Create Track', type: :feature do
 
     click_button "Sign in"
   end
-  #TODO: Fix jquery upload controller
 
-  #scenario 'with valid credentials' do
-    #visit new_album_track_path album
+  scenario 'with valid credentials' do
+    visit new_album_track_path album
 
-    #fill_in "Track", with: track.name
-    #attach_file "Mp3", "#{Rails.root}/spec/support/sample.mp3"
+    fill_in "Track", with: track.name
+    attach_file "Mp3", "#{Rails.root}/spec/support/sample.mp3"
 
-    #click_button "Create Track"
+    click_button "Create Track"
 
-    #expect(page).to have_text track.name
-  #end
+    expect(page).to have_text track.name
+  end
 
-  #scenario 'with nil Track' do
-    #visit new_album_track_path album
+  scenario 'with nil Track' do
+    visit new_album_track_path album
 
-    #fill_in "Track", with: nil
-    #attach_file "Mp3", nil
+    fill_in "Track", with: nil
+    attach_file "Mp3", nil
 
-    #click_button "Create Track"
+    click_button "Create Track"
 
-    #expect(page).to have_text "New track for"
-  #end
+    expect(page).to have_text "New track for"
+  end
 
-  #scenario 'with invalid file format' do
-    #visit new_album_track_path album
+  scenario 'with invalid file format' do
+    visit new_album_track_path album
 
-    #fill_in "Track", with: nil
-    #attach_file "Mp3", "#{Rails.root}/spec/support/sample.png"
+    fill_in "Track", with: nil
+    attach_file "Mp3", "#{Rails.root}/spec/support/sample.png"
 
 
-    #click_button "Create Track"
+    click_button "Create Track"
 
-    #expect(page).to have_text "New track for"
-  #end
+    expect(page).to have_text "New track for"
+  end
 
 end

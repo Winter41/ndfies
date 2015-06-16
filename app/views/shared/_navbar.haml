@@ -12,13 +12,9 @@
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
         %li
-          = link_to "Home", root_path
-        %li
           = link_to "Artists", artists_path
       - if user_signed_in?
         %ul.nav.navbar-nav.navbar-right
-          %li
-            = link_to "Link", "#"
           %li.dropdown
             %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
               = current_user.email
