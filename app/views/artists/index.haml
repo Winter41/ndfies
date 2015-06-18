@@ -2,5 +2,6 @@
   %h3 Home
   = link_to "New artist", new_artist_path
 
-  %h4 Artists
+  %h4.ion-person Artists
   = render @artists
+  = will_paginate @artists
